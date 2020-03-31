@@ -1,18 +1,20 @@
 
 # coding: utf-8
 # In[29]:
-#!/usr/bin/python
-
+#! /usr/bin/python3
+import praw
+import pandas as pd
+import datetime as dt
 import praw
 
 # In[30]:
 
 
-reddit = praw.Reddit(client_id='XXXXXXX',
-                     client_secret='XXXXXXX',
-                     user_agent='XXXXXXX',
-                     username='XXXXXXX',
-                     password='XXXXXXX')
+reddit = praw.Reddit(client_id='Fpiz3pT2h6jT5Q', \
+                     client_secret='IWo78CYz4qJDXZEME91Fhd3Wxx8', \
+                     user_agent='mb_scraper', \
+                     username='abbyabante_27', \
+                     password='Abzkie27*')
 
 
 # In[31]:
@@ -236,4 +238,7 @@ comms_data = comms_data.assign(timestamp = timestamps)
 
 topics_data.to_csv("subreddit_Nootropics_topics.csv")
 comms_data.to_csv("subreddit_Nootropics_comments.csv")
+
+topics_data.to_csv('scraper.csv', index=False) 
+
 
